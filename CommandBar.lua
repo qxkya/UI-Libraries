@@ -340,7 +340,7 @@ function Library:CreateWindow(Properties)
     local Theme = Utility:GetProperty('Window', 'Theme', Properties) or Library.Themes.dark
     local Position = string.lower(Utility:GetProperty('Window', 'Position', Properties)) or 'top'
     local Draggable = Utility:GetProperty('Window', 'Draggable', Properties) or false
-    local Prefix = Utility:StringToKeyCode(Utility:GetProperty('Window', 'Prefix', Properties)) or Utility:StringToKeyCode(';')
+    local Prefix = Utility:GetProperty('Window', 'Prefix', Properties)
 
     -- // Set Library Properties
     Library.Prefix = Prefix
