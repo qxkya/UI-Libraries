@@ -1058,6 +1058,10 @@ function Library:CreateWindow(Properties)
         end
     end)
 
+    for i, v in ipairs(Commands) do
+        print(i, v)
+    end
+
     -- // Execute Command
     local function Execute(String)
         local Split = String:split(' ')
@@ -1065,10 +1069,6 @@ function Library:CreateWindow(Properties)
         local First = Split[1]:lower():gsub(Utility:KeyCodeToString(Library.Prefix), '')
 
         CommandInput.Text = ''
-        
-        for i, v in ipairs(Commands) do
-            print(i, v)
-        end
 
         --if Commands[First] ~= nil then
             local Command = assert(Commands[First], '[Visual] Command Not Found: ' .. First)
