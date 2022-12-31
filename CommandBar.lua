@@ -1004,7 +1004,7 @@ function Library:CreateWindow(Properties)
     -- // Prefix
     UserInputService.InputBegan:Connect(function(Input, GameProcessedEvent)
         if not GameProcessedEvent then
-            if Input.KeyCode.Name == Library.Prefix.Name then
+            if Input.KeyCode == Library.Prefix then
                 if Main.Position.Y == UDim.new(1, 37) or Main.Position.Y == UDim.new(1, 36) or Main.Position.Y == UDim.new(0, -72) then
                     UpdateFrameSizes()
                     CommandInput:CaptureFocus()
