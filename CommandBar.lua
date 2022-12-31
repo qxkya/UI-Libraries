@@ -1648,6 +1648,7 @@ function Library:CreateWindow(Properties)
             task.wait(0.25)
 
             if Commands[Name] ~= nil then
+                print(Name)
                 pcall(Execute(Name))
             end
 
