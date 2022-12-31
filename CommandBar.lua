@@ -1064,6 +1064,7 @@ function Library:CreateWindow(Properties)
 
     -- // Execute Command
     local function Execute(String)
+        pcall(function()
         local Split = String:split(' ')
         local Arguments = {}
         local First = Split[1]:lower():gsub(Utility:KeyCodeToString(Library.Prefix), '')
@@ -1218,7 +1219,7 @@ function Library:CreateWindow(Properties)
                     end
                 end
             end
-        --end
+        end)
     end
 
     -- // Search Commands
