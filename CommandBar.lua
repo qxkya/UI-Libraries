@@ -1647,7 +1647,9 @@ function Library:CreateWindow(Properties)
 
             task.wait(0.25)
 
-            pcall(Execute(Name))
+            if Commands[Name] ~= nil then
+                pcall(Execute(Name))
+            end
 
             Utility:Tween(CommandHolder, {BackgroundColor3 = Theme.BackgroundColor}, 0.25)
 
