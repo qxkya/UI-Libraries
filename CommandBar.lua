@@ -1071,7 +1071,7 @@ function Library:CreateWindow(Properties)
 
         CommandInput.Text = ''
 
-        for i, v in ipairs(Commands) do
+        for i, v in pairs(Commands) do
             print(i, v)
         end
 
