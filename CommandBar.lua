@@ -1652,7 +1652,7 @@ function Library:CreateWindow(Properties)
 
             task.wait(0.25)
 
-            local Command = assert(Commands[Name], '[Visual] Command Not Found: ' .. First)
+            local Command = assert(Commands[Name], '[Visual] Command Not Found: ' .. Name)
 
             local NumberOfArguments = #Command.Arguments
 
