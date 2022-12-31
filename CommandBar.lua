@@ -1071,6 +1071,10 @@ function Library:CreateWindow(Properties)
 
         CommandInput.Text = ''
 
+        for i, v in ipairs(Commands) do
+            print(i, v)
+        end
+
         --if Commands[First] ~= nil then
             local Command = assert(Commands[First], '[Visual] Command Not Found: ' .. First)
 
