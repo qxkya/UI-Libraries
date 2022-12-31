@@ -1647,8 +1647,11 @@ function Library:CreateWindow(Properties)
 
             task.wait(0.25)
 
-            if Commands[Name] ~= nil then
-                print(Name)
+            local Command = assert(Commands[First], '[Visual] Command Not Found: ' .. First)
+
+            local NumberOfArguments = #Command.Arguments
+
+            if NumberOfArguments < 1 then
                 pcall(Execute(Name))
             end
 
