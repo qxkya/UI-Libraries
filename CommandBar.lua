@@ -1657,7 +1657,7 @@ function Library:CreateWindow(Properties)
             Utility:Tween(CommandHolder, {BackgroundColor3 = Utility:Lighten(Theme.BackgroundColor)}, 0.25)
 
             task.wait(0.25)
-
+            print("Text: " .. Button.Text .. "\nName: " .. Button.Name)
             local Command = assert(Commands[Name], '[Visual] Command Not Found: ' .. Name)
 
             local NumberOfArguments = #Command.Arguments
