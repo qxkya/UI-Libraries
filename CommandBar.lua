@@ -1066,7 +1066,7 @@ function Library:CreateWindow(Properties)
 
         CommandInput.Text = ''
         
-        if Commands[First] ~= nil then
+        --if Commands[First] ~= nil then
             local Command = assert(Commands[First], '[Visual] Command Not Found: ' .. First)
 
             local NumberOfArguments = #Command.Arguments
@@ -1214,7 +1214,7 @@ function Library:CreateWindow(Properties)
                     end
                 end
             end
-        end
+        --end
     end
 
     -- // Search Commands
