@@ -1071,6 +1071,8 @@ function Library:CreateWindow(Properties)
 
         CommandInput.Text = ''
 
+        print("----------------------------\n" .. Name)
+
         for i, v in pairs(Commands) do
             print(i, v)
         end
