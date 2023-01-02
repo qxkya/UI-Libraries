@@ -1076,7 +1076,8 @@ function Library:CreateWindow(Properties)
         end
 
         --if Commands[First] ~= nil then
-            local Command = assert(Commands[First], '[Visual] Command Not Found: ' .. First)
+            --local Command = assert(Commands[First], '[Visual] Command Not Found: ' .. First)
+            print("COMMMMAAAAAND: " .. Commands[First])
 
             local NumberOfArguments = #Command.Arguments
 
