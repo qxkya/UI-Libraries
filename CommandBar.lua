@@ -1662,7 +1662,7 @@ function Library:CreateWindow(Properties)
                 Command = assert(Commands[Name], '[Visual] Command Not Found: ' .. Name)
             end
 
-            print(Command[Name:lower()])
+            print(Commands[Name:lower()])
 
             print("." .. Name .. ".")
 
