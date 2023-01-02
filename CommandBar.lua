@@ -1071,8 +1071,6 @@ function Library:CreateWindow(Properties)
 
         CommandInput.Text = ''
 
-        print("First: " .. First .. "\nString: " .. String .. "\nName: " .. Name)
-
         for i, v in pairs(Commands) do
             print(i, v)
         end
@@ -1662,6 +1660,8 @@ function Library:CreateWindow(Properties)
             if Commands[Name] ~= nil then
                 Command = assert(Commands[Name], '[Visual] Command Not Found: ' .. Name)
             end
+
+            print(Command[Name:lower()])
 
             print("." .. Name .. ".")
 
