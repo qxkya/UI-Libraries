@@ -1657,8 +1657,11 @@ function Library:CreateWindow(Properties)
             Utility:Tween(CommandHolder, {BackgroundColor3 = Utility:Lighten(Theme.BackgroundColor)}, 0.25)
 
             task.wait(0.25)
-    
-            local Command = assert(Commands[string.gsub(Button.Name, "Button", "")], '[Visual] Command Not Found: ' .. Name)
+
+            local Command
+            if Commands[Name] ~= nil then
+                Command = assert(Commands[Name], '[Visual] Command Not Found: ' .. Name)
+            end
 
             local NumberOfArguments = #Command.Arguments
 
@@ -1674,7 +1677,7 @@ function Library:CreateWindow(Properties)
                 task.spawn(function()
                     HoverDebounce = true
                     task.wait(0.5)
-                    HoverDebounce = false 
+                    HoverDebounce = false
                 end)
 
                 if Main.Position.Y == UDim.new(1, 1) or Main.Position.Y == UDim.new(0, -37) then
