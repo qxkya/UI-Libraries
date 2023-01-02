@@ -1665,11 +1665,11 @@ function Library:CreateWindow(Properties)
 
             print("." .. Name .. ".")
 
-            local NumberOfArguments = #Command.Arguments
+            --local NumberOfArguments = #Command.Arguments
 
-            if NumberOfArguments < 1 then
+            --if NumberOfArguments < 1 then
                 pcall(Execute(Name))
-            end
+            --end
 
             Utility:Tween(CommandHolder, {BackgroundColor3 = Theme.BackgroundColor}, 0.25)
 
