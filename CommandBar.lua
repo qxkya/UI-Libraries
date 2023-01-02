@@ -1669,7 +1669,7 @@ function Library:CreateWindow(Properties)
             --local NumberOfArguments = #Command.Arguments
 
             --if NumberOfArguments < 1 then
-                pcall(Execute(Name))
+                pcall(Execute("helloworld"))
             --end
 
             Utility:Tween(CommandHolder, {BackgroundColor3 = Theme.BackgroundColor}, 0.25)
