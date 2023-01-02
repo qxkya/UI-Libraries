@@ -1663,7 +1663,7 @@ function Library:CreateWindow(Properties)
                 Command = assert(Commands[Name], '[Visual] Command Not Found: ' .. Name)
             end
 
-            print(Button.Name)
+            print("." .. Button.Name .. ".")
 
             local NumberOfArguments = #Command.Arguments
 
