@@ -1191,6 +1191,8 @@ function library:CreateWindow(name, version, icon)
 				end)
 				function SetToggle:SetToggle(bool)
 					if bool then
+						print("bool", bool)
+						print("f", f)
 						f = true
 						TS:Create(Dot,TweenInfo.new(.1),{BackgroundTransparency=0}):Play()
 						callback(true)
