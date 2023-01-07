@@ -1087,7 +1087,6 @@ function library:CreateWindow(name, version, icon)
 				title = title or "Title"
 				desc = desc or "Description"
 				callback = callback or function() end
-				local UpdateToggle = {}
 				local SetToggle = {}
 				local Toggle = Instance.new("Frame")
 				local UICorner = Instance.new("UICorner")
@@ -1186,11 +1185,7 @@ function library:CreateWindow(name, version, icon)
 						callback(false)
 					end
 				end)
-				function UpdateToggle:UpdateToggle(title, desc)
-					ToggleTitle.Text = title
-					Description.Text = desc
-				end
-				function UpdateToggle:SetToggle(bool)
+				function SetToggle:SetToggle(bool)
 					f = bool
 					if bool == true then
 						TS:Create(Dot,TweenInfo.new(.1),{BackgroundTransparency=0}):Play()
@@ -1199,7 +1194,7 @@ function library:CreateWindow(name, version, icon)
 					end
 					callback(bool)
 				end
-				return UpdateToggle
+				return SetToggle
 			end
 
 
