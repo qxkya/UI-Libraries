@@ -1186,13 +1186,15 @@ function library:CreateWindow(name, version, icon)
 					end
 				end)
 				function SetToggle:SetToggle(bool)
-					f = not bool
-					if bool == false then
+					if not bool then
+						f = true
 						TS:Create(Dot,TweenInfo.new(.1),{BackgroundTransparency=0}):Play()
-					elseif bool == true then
+						callback(true)
+					else
+						f = false
 						TS:Create(Dot,TweenInfo.new(.1),{BackgroundTransparency=1}):Play()
+						callback(false)
 					end
-					callback(bool)
 				end
 				return SetToggle
 			end
