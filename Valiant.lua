@@ -1174,6 +1174,8 @@ function library:CreateWindow(name, version, icon)
 				UICorner_4.CornerRadius = UDim.new(0.5, 0)
 				UICorner_4.Parent = TButton
 
+				local f = false
+
 				TButton.MouseButton1Click:Connect(function()
 					if not f then
 						f = true
@@ -1186,7 +1188,7 @@ function library:CreateWindow(name, version, icon)
 					end
 				end)
 				function SetToggle:SetToggle(bool)
-					if not bool then
+					if bool then
 						f = true
 						TS:Create(Dot,TweenInfo.new(.1),{BackgroundTransparency=0}):Play()
 						callback(true)
