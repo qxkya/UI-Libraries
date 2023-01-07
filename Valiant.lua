@@ -1178,10 +1178,12 @@ function library:CreateWindow(name, version, icon)
 
 				TButton.MouseButton1Click:Connect(function()
 					if not f then
+						print("true")
 						f = true
 						TS:Create(Dot,TweenInfo.new(.1),{BackgroundTransparency=0}):Play()
 						callback(true)
 					else
+						print("false")
 						f = false
 						TS:Create(Dot,TweenInfo.new(.1),{BackgroundTransparency=1}):Play()
 						callback(false)
