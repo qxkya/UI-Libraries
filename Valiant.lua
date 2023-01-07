@@ -1088,6 +1088,7 @@ function library:CreateWindow(name, version, icon)
 				desc = desc or "Description"
 				callback = callback or function() end
 				local UpdateToggle = {}
+				local SetToggle = {}
 				local Toggle = Instance.new("Frame")
 				local UICorner = Instance.new("UICorner")
 				local ToggleTitle = Instance.new("TextLabel")
@@ -1189,7 +1190,7 @@ function library:CreateWindow(name, version, icon)
 					ToggleTitle.Text = title
 					Description.Text = desc
 				end
-				function SetToggle(bool)
+				function UpdateToggle:SetToggle(bool)
 					f = bool
 					if bool == true then
 						TS:Create(Dot,TweenInfo.new(.1),{BackgroundTransparency=0}):Play()
