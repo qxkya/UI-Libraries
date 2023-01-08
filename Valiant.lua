@@ -651,7 +651,7 @@ function library:CreateWindow(name, version, icon)
 				end)
 
 				function UpdateButton:UpdateButton(name, desc)
-					ButtonText.Text = name
+					Title.Text = name
 					Description.Text = desc
 				end
 				return UpdateButton
