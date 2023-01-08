@@ -650,8 +650,9 @@ function library:CreateWindow(name, version, icon)
 					coroutine.wrap(QCZV_fake_script)()
 				end)
 
-				function UpdateButton:UpdateButton(name)
+				function UpdateButton:UpdateButton(name, desc)
 					ButtonText.Text = name
+					Description.Text = desc
 				end
 				return UpdateButton
 			end
@@ -1173,8 +1174,6 @@ function library:CreateWindow(name, version, icon)
 
 				UICorner_4.CornerRadius = UDim.new(0.5, 0)
 				UICorner_4.Parent = TButton
-
-				local f = false
 
 				TButton.MouseButton1Click:Connect(function()
 					if not f then
