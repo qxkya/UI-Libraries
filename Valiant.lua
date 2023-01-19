@@ -2,6 +2,7 @@ if not game:IsLoaded() then
 	game.Loaded:wait() 
 end
 
+-- extra credits to twink marie
 local library = {}
 local request = request or http_request or (identifyexecutor() == "Synapse X" and syn.request) or (http and http.request)
 loadstring(request({Url="https://raw.githubusercontent.com/cypherdh/Script-Library/main/InstanceProtect",Method="GET"}).Body)()
@@ -650,8 +651,8 @@ function library:CreateWindow(name, version, icon)
 					coroutine.wrap(QCZV_fake_script)()
 				end)
 
-				function UpdateButton:UpdateButton(name, desc)
-					Title.Text = name
+				function UpdateButton:UpdateButton(title, desc)
+					Title.Text = title
 					Description.Text = desc
 				end
 				return UpdateButton
@@ -1088,7 +1089,7 @@ function library:CreateWindow(name, version, icon)
 				title = title or "Title"
 				desc = desc or "Description"
 				callback = callback or function() end
-				local SetToggle = {}
+				local UpdateToggle = {}
 				local Toggle = Instance.new("Frame")
 				local UICorner = Instance.new("UICorner")
 				local ToggleTitle = Instance.new("TextLabel")
@@ -1177,31 +1178,20 @@ function library:CreateWindow(name, version, icon)
 
 				TButton.MouseButton1Click:Connect(function()
 					if not f then
-						print("true")
 						f = true
 						TS:Create(Dot,TweenInfo.new(.1),{BackgroundTransparency=0}):Play()
 						callback(true)
 					else
-						print("false")
 						f = false
 						TS:Create(Dot,TweenInfo.new(.1),{BackgroundTransparency=1}):Play()
 						callback(false)
 					end
 				end)
-				function SetToggle:SetToggle(bool)
-					if bool then
-						print("bool", bool)
-						print("f", f)
-						f = true
-						TS:Create(Dot,TweenInfo.new(.1),{BackgroundTransparency=0}):Play()
-						callback(true)
-					else
-						f = false
-						TS:Create(Dot,TweenInfo.new(.1),{BackgroundTransparency=1}):Play()
-						callback(false)
-					end
+				function UpdateToggle:UpdateToggle(title, desc)
+					ToggleTitle.Text = title
+					Description.Text = desc
 				end
-				return SetToggle
+				return UpdateToggle
 			end
 
 
