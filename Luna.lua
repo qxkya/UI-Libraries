@@ -1881,9 +1881,9 @@ local function Hide(Window, bind, notif)
 end
 
 
-if gethui then
+if not UNPROTECTED_UI and gethui then
 	LunaUI.Parent = gethui()
-elseif syn and syn.protect_gui then 
+elseif not UNPROTECTED_UI and syn and syn.protect_gui then 
 	syn.protect_gui(LunaUI)
 	LunaUI.Parent = CoreGui
 elseif not isStudio and CoreGui:FindFirstChild("RobloxGui") then
