@@ -1892,20 +1892,22 @@ elseif not isStudio then
 	LunaUI.Parent = CoreGui
 end
 
-if gethui then
-	for _, Interface in ipairs(gethui():GetChildren()) do
-		if Interface.Name == LunaUI.Name and Interface ~= LunaUI then
-			Hide(Interface.SmartWindow)
-			Interface.Enabled = false
-			Interface.Name = "Luna-Old"
+if not UNPROTECTED_UI then
+	if gethui then
+		for _, Interface in ipairs(gethui():GetChildren()) do
+			if Interface.Name == LunaUI.Name and Interface ~= LunaUI then
+				Hide(Interface.SmartWindow)
+				Interface.Enabled = false
+				Interface.Name = "Luna-Old"
+			end
 		end
-	end
-elseif not isStudio then
-	for _, Interface in ipairs(CoreGui:GetChildren()) do
-		if Interface.Name == LunaUI.Name and Interface ~= LunaUI then
-			Hide(Interface.SmartWindow)
-			Interface.Enabled = false
-			Interface.Name = "Luna-Old"
+	elseif not isStudio then
+		for _, Interface in ipairs(CoreGui:GetChildren()) do
+			if Interface.Name == LunaUI.Name and Interface ~= LunaUI then
+				Hide(Interface.SmartWindow)
+				Interface.Enabled = false
+				Interface.Name = "Luna-Old"
+			end
 		end
 	end
 end
